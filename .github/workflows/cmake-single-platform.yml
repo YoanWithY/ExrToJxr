@@ -20,7 +20,7 @@ jobs:
     
     - name: Set VCPKG_ROOT environment variable
       run: |
-        echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> $GITHUB_ENV
+        echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> $env:GITHUB_ENV
 
     - name: Install dependencies with vcpkg
       run: |
