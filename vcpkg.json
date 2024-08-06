@@ -1,0 +1,7 @@
+{
+  "name": "exr-to-jpx-converter",
+  "version-string": "0.0.0",
+  "dependencies": [
+    "openimageio"
+  ]
+}
