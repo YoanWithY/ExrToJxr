@@ -31,3 +31,14 @@ jobs:
 
     - name: Build with CMakePresets
       run: cmake --build --preset=default
+
+    - name: Package build output
+      run: |
+        $zipFile = "${{ github.workspace }}/build_output.zip"
+        Compress-Archive -Path "${{ github.workspace }}/build/Release/*" -DestinationPath $zipFile
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-output
+        path: ${{ github.workspace }}/build_output.zip
