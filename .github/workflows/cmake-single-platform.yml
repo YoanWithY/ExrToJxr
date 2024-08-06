@@ -19,7 +19,9 @@ jobs:
         .\vcpkg\bootstrap-vcpkg.bat
     
     - name: Set VCPKG_ROOT environment variable
-      run: echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> $GITHUB_ENV
+      run: |
+        set VCPKG_ROOT=${{ github.workspace }}/vcpkg
+        echo %VCPKG_ROOT%
 
     - name: Install dependencies with vcpkg
       run: |
