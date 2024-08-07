@@ -2,8 +2,8 @@ name: C++ CI
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - 'src/**'
 
 jobs:
   build:
