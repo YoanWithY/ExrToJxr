@@ -1,3 +1,4 @@
+![example workflow](https://github.com/yoanwithy/exrtojxr/actions/workflows/cmake-single-platform.yml/badge.svg)
 # Exr to Jxr
 This is a little softwaretool for Windows that converts single layer .exr files to a .jxr. The tool automatically figures out the floating point format (16bit or 32bit) and the number of components and outputs the .jxr in the same format. This tool does not do any color transformation, it only copies the data from the one format to the other.
 
