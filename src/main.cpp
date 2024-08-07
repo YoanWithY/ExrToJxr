@@ -20,7 +20,7 @@ void ConvertEXRtoJXR(const std::string& inputFilename, const std::string& output
 	const TypeDesc exrFormat = spec.channel_bytes() == 2 ? TypeDesc::HALF : TypeDesc::FLOAT;
 	const int exrComponents = spec.nchannels;
 	std::vector<unsigned char> pixels(spec.image_bytes());
-	in->read_image(TypeDesc::HALF, pixels.data());
+	in->read_image(exrFormat, pixels.data());
 	in->close();
 	
 	// Convert to WIC format
@@ -93,7 +93,7 @@ void ConvertEXRtoJXR(const std::string& inputFilename, const std::string& output
 
     hr = IsEqualGUID(pixelFormat, intendedFormat) ? S_OK : E_FAIL;
     if(FAILED(hr)) {
-        std::cerr << "Failed pixel format not supported." << std::endl;
+        std::cerr << "Failed: Pixel format not supported." << std::endl;
 		return;
     }
 
